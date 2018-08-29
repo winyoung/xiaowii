@@ -1,0 +1,85 @@
+<template>
+    <div class="wii_header">
+        <div class="wii_header_container">
+            <div class="company_logo">
+                <a href="javascript:;">
+                    <img src="../assets/company_logo.png" alt="">
+                </a>
+            </div>
+            <div class="wii_header_info clearfix">
+                <div class="wii_email">
+                    <i class="iconfont icon-39"></i>
+                    <span>收件箱</span>
+                </div>
+                <div class="wii_message">
+                    <i class="iconfont icon-xinxi"></i>
+                    <span>聊天</span>
+                </div>
+                <div class="wii_person">
+                    <i class="iconfont icon-gerenfill"></i>
+                    <span>个人中心</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      msg: "this is wii header!!!"
+    };
+  }
+};
+</script>
+
+<style lang="less">
+.wii_header {
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(#fff, #ddf1fc);
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 0 5px 1px #ddf1fc;
+  .wii_header_container {
+    width: 1200px;
+    height: 50px;
+    margin: 0 auto;  
+    position: relative;
+    .company_logo {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      left: 0;
+      a {
+        width: 100%;
+        height: 100%;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+    .wii_header_info{
+        width: 300px;
+        height: 50px;
+        position: absolute;
+        right: 0;
+        vertical-align: middle;
+        &>div{
+            float: left;
+            margin-left: 25px;
+            margin-top:14px;
+            cursor: pointer;
+            span{
+                font-size: 14px;
+            }
+        }
+       
+    }
+  }
+}
+</style>
+
+
+
+
