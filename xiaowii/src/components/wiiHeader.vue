@@ -37,13 +37,16 @@ export default {
 .wii_header {
   width: 100%;
   height: 50px;
-  background: linear-gradient(#fff, #ddf1fc);
-  border-radius: 0 0 20px 20px;
-  box-shadow: 0 0 5px 1px #ddf1fc;
+  //   background: linear-gradient(#fff, #ddf1fc);
+  //   border-radius: 0 0 20px 20px;
+  background-color: #0076fe;
+  position: fixed;
+  top: 0;
+  border-bottom: 1px solid rgb(116, 152, 252);
   .wii_header_container {
     width: 1200px;
     height: 50px;
-    margin: 0 auto;  
+    margin: 0 auto;
     position: relative;
     .company_logo {
       width: 50px;
@@ -59,22 +62,26 @@ export default {
         }
       }
     }
-    .wii_header_info{
-        width: 300px;
+    .wii_header_info {
+      width: 300px;
+      height: 50px;
+      position: absolute;
+      right: 0;
+      vertical-align: middle;
+      & > div {
+        float: left;
         height: 50px;
-        position: absolute;
-        right: 0;
-        vertical-align: middle;
-        &>div{
-            float: left;
-            margin-left: 25px;
-            margin-top:14px;
-            cursor: pointer;
-            span{
-                font-size: 14px;
-            }
+        line-height: 50px;
+        margin-left: 25px;
+        cursor: pointer;
+        &:hover {
+          border-radius: 5px;
+          box-shadow: 0 0 15px -5px black;
         }
-       
+        span,i{
+            color: white;
+        }
+      }
     }
   }
 }

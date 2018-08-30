@@ -1,5 +1,6 @@
 <template>
   <div class="main_view">
+    <wii-full-nav></wii-full-nav>
     <!-- 头部 -->
     <wii-header></wii-header>
     <wii-main-nav></wii-main-nav>
@@ -18,6 +19,7 @@ export default {
     }
   },
   components:{
+    wiiFullNav,
     wiiHeader,
     wiiMainNav
   }

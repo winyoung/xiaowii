@@ -1,0 +1,94 @@
+<template>
+    <div class="wii_full_nav" ref='fullnav' >
+        <div class="wii_full_container">
+            <ul class="clearfix">
+                <li>
+                    <img src="../assets/images/proDev.png" alt="产品管理">
+                    <span>产品管理</span>
+                </li>
+                <li>
+                    <img src="../assets/images/cusDev.png" alt="客户开发">
+                    <span>客户开发</span>
+                </li>
+                <li>
+                    <img src="../assets/images/storManage.png" alt="仓储管理">
+                    <span>仓储管理</span>
+                </li>
+                <li>
+                    <img src="../assets/images/saleManage.png" alt="售卖管理">
+                    <span>售卖管理</span>
+                </li>
+                <li>
+                    <img src="../assets/images/admin.png" alt="Administration">
+                    <span>Administration</span>
+                </li>
+                <li>
+                    <img src="../assets/images/setup.png" alt="设置">
+                    <span>设置</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</template>
+<style lang="less">
+.wii_full_nav{
+    width: 100%;
+    background: url(../assets/getting-started-top-bg.svg) no-repeat;
+    background-size: cover;
+    margin-top: 92px;
+    .wii_full_container{
+        width: 1200px;
+        margin: 0 auto;
+        ul{
+            width: 1200px;
+            position: absolute;
+            padding: 50px 80px;
+            li{
+               float: left;
+               width: 20%;
+               height: 280px;
+               text-align: center;
+               margin: 0 65px;
+               cursor: pointer;
+               padding-top: 50px;
+               &:hover{
+                   background-color: rgba(255, 255, 255, 0.5);
+                   box-shadow: 0px 20px 60px 0px rgba(65,116,150,0.2);
+                   transition: all 250ms linear;
+                   img{
+                       width: 160px;
+                       height: 160px;
+                       transition: all 250ms linear;
+                   }
+               }
+                img{
+                    width: 150px;
+                    height: 150px;
+                    padding: 25px;
+                }
+                span{
+                    display: block;
+                    width: 100%;
+                    height: 40px;
+                    line-height: 40px;
+                    text-align: center
+                }
+            }
+        }
+    }
+}
+</style>
+<script>
+export default {
+    data(){
+        return{
+            clientHeight:'',
+        }
+    },
+    mounted(){
+        this.clientHeight = document.documentElement.clientHeight + 'px';
+        this.$refs.fullnav.style.height = this.clientHeight;
+    }
+}
+</script>
+
