@@ -152,5 +152,5 @@
     color: #42484e;
     position: relative;
     -ms-overflow-x: hidden;
-    overflow-x: hidden;
+    overflow-x: auto;
    }

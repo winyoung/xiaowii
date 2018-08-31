@@ -44,7 +44,7 @@ export default {
   top: 0;
   border-bottom: 1px solid rgb(116, 152, 252);
   .wii_header_container {
-    width: 1200px;
+    width: 1000px;
     height: 50px;
     margin: 0 auto;
     position: relative;

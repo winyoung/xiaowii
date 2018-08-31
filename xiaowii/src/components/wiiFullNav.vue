@@ -1,12 +1,12 @@
 <template>
-    <div class="wii_full_nav" ref='fullnav' >
+    <div class="wii_full_nav" ref='fullnav'>
         <div class="wii_full_container">
             <ul class="clearfix">
-                <li>
+                <li >
                     <img src="../assets/images/proDev.png" alt="产品管理">
                     <span>产品管理</span>
                 </li>
-                <li>
+                <li >
                     <img src="../assets/images/cusDev.png" alt="客户开发">
                     <span>客户开发</span>
                 </li>
@@ -37,20 +37,20 @@
     background-size: cover;
     margin-top: 92px;
     .wii_full_container{
-        width: 1200px;
+        width: 1000px;
         margin: 0 auto;
         ul{
-            width: 1200px;
+            width: 1000px;
             position: absolute;
             padding: 50px 80px;
             li{
                float: left;
-               width: 20%;
-               height: 280px;
+               width: 22%;
+               height: 235px;
                text-align: center;
-               margin: 0 65px;
+               margin: 10px 47px;
                cursor: pointer;
-               padding-top: 50px;
+               padding-top: 25px;
                &:hover{
                    background-color: rgba(255, 255, 255, 0.5);
                    box-shadow: 0px 20px 60px 0px rgba(65,116,150,0.2);
@@ -84,6 +84,9 @@ export default {
         return{
             clientHeight:'',
         }
+    },
+    methods:{
+      
     },
     mounted(){
         this.clientHeight = document.documentElement.clientHeight + 'px';

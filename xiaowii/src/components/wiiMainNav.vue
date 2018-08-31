@@ -3,14 +3,16 @@
         <div class="wii_nav_container">
             <ul class="clearfix wii_main_subnav">
                 <li>
-                    <span>产品开发</span>
+                    <router-link to='/hotSellingTrend'>
+                        <span>产品开发</span>
+                    </router-link>
                     <ul>
-                        <li>热卖趋势</li>
-                        <li>爆款挖掘</li>
-                        <li>新品开发</li>
-                        <li>线上产品</li>
-                        <li>产品管理</li>
-                        <li>设置</li>
+                        <li @click='setPath("热卖趋势")'>热卖趋势</li>
+                        <li @click='setPath("爆款挖掘")'>爆款挖掘</li>
+                        <li @click='setPath("新品开发")'>新品开发</li>
+                        <li @click='setPath("线上产品")'>线上产品</li>
+                        <li @click='setPath("产品管理")'>产品管理</li>
+                        <li @click='setPath("设置")'>设置</li>
                     </ul>
                 </li>
                 <li>
@@ -66,23 +68,42 @@ export default {
   data() {
     return {
       msg: "this is wii nav!!!",
-      cangchuwidth: '230px',
-      admwidth:'155px'
-    };
+      cangchuwidth: "230px",
+      admwidth: "155px"
+    }
+  },
+  methods: {
+      setPath(info){
+          var that = this;
+          switch(info){
+              case '热卖趋势': that.$router.push('/hotSellingTrend') 
+              break;
+              case '爆款挖掘': that.$router.push('/burstingDig') 
+              break;
+              case '新品开发': that.$router.push('/newProDev') 
+              break;
+              case '线上产品': that.$router.push('/onlinePro') 
+              break;
+              case '产品管理': that.$router.push('/proManage') 
+              break;
+              case '设置': that.$router.push('/setting') 
+              break;
+              
+          }
+      }
   }
-};
+}
 </script>
 <style lang="less">
-
 .wii_main_nav {
   width: 100%;
   height: 42px;
-//   background: linear-gradient(#fff, #ddf1fc);
+  //   background: linear-gradient(#fff, #ddf1fc);
   background-color: #0076fe;
   position: fixed;
   top: 50px;
   .wii_nav_container {
-    width: 1200px;
+    width: 1000px;
     margin: 0 auto;
     .wii_main_subnav {
       & > li {
@@ -93,8 +114,8 @@ export default {
         padding: 0 10px;
         position: relative;
         cursor: pointer;
-        span{
-            color: white;
+        span {
+          color: white;
         }
         &:hover {
           border-radius: 5px;
@@ -109,15 +130,15 @@ export default {
           left: 0;
           min-width: 55px;
           box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.5);
-          background:  linear-gradient(to bottom, #fff, #ddf1fc);
-         
+          background: linear-gradient(to bottom, #fff, #ddf1fc);
+          z-index: 9999;
           li {
             width: 100%;
-            height: 30px;  
+            height: 30px;
             line-height: 30px;
-             padding: 0 10px;
-            &:hover{
-                background: linear-gradient(to right, #fff, #ddf1fc);
+            padding: 0 10px;
+            &:hover {
+              background: linear-gradient(to right, #fff, #ddf1fc);
             }
           }
         }
