@@ -99,7 +99,7 @@ export default {
   width: 100%;
   height: 42px;
   //   background: linear-gradient(#fff, #ddf1fc);
-  background-color: #0076fe;
+  background-color: #2041ba;
   position: fixed;
   top: 50px;
   .wii_nav_container {

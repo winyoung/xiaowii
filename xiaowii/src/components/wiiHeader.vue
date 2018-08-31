@@ -39,7 +39,7 @@ export default {
   height: 50px;
   //   background: linear-gradient(#fff, #ddf1fc);
   //   border-radius: 0 0 20px 20px;
-  background-color: #0076fe;
+  background-color: #2041ba;
   position: fixed;
   top: 0;
   border-bottom: 1px solid rgb(116, 152, 252);

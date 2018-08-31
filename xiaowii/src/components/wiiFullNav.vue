@@ -2,27 +2,27 @@
     <div class="wii_full_nav" ref='fullnav'>
         <div class="wii_full_container">
             <ul class="clearfix">
-                <li >
-                    <img src="../assets/images/proDev.png" alt="产品管理">
-                    <span>产品管理</span>
+                <li @click='setPath("产品开发")'>
+                    <img src="../assets/images/proDev.png" alt="产品开发">
+                    <span>产品开发</span>
                 </li>
-                <li >
+                <li @click='setPath()'>
                     <img src="../assets/images/cusDev.png" alt="客户开发">
                     <span>客户开发</span>
                 </li>
-                <li>
+                <li @click='setPath()'>
                     <img src="../assets/images/storManage.png" alt="仓储管理">
                     <span>仓储管理</span>
                 </li>
-                <li>
+                <li @click='setPath()'>
                     <img src="../assets/images/saleManage.png" alt="售卖管理">
                     <span>售卖管理</span>
                 </li>
-                <li>
+                <li @click='setPath()'>
                     <img src="../assets/images/admin.png" alt="Administration">
                     <span>Administration</span>
                 </li>
-                <li>
+                <li @click='setPath()'>
                     <img src="../assets/images/setup.png" alt="设置">
                     <span>设置</span>
                 </li>
@@ -86,7 +86,13 @@ export default {
         }
     },
     methods:{
-      
+      setPath(info){
+          var that = this;
+          switch(info){
+              case "产品开发" : that.$router.push("/hotSellingTrend")
+              break;
+          }
+      }
     },
     mounted(){
         this.clientHeight = document.documentElement.clientHeight + 'px';
