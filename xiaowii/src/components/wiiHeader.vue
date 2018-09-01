@@ -37,12 +37,12 @@ export default {
 .wii_header {
   width: 100%;
   height: 50px;
-  //   background: linear-gradient(#fff, #ddf1fc);
+    background: linear-gradient(#fff, #ddf1fc);
   //   border-radius: 0 0 20px 20px;
-  background-color: #2041ba;
+  // background-color: #2041ba;
   position: fixed;
   top: 0;
-  border-bottom: 1px solid rgb(116, 152, 252);
+  // border-bottom: 1px solid rgb(116, 152, 252);
   .wii_header_container {
     width: 1000px;
     height: 50px;
@@ -78,9 +78,9 @@ export default {
           border-radius: 5px;
           box-shadow: 0 0 15px -5px black;
         }
-        span,i{
-            color: white;
-        }
+        // span,i{
+        //     color: white;
+        // }
       }
     }
   }

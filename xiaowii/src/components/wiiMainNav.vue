@@ -96,15 +96,17 @@ export default {
 </script>
 <style lang="less">
 .wii_main_nav {
+  z-index:999;
   width: 100%;
   height: 42px;
-  //   background: linear-gradient(#fff, #ddf1fc);
-  background-color: #2041ba;
+    background: linear-gradient(#fff, #ddf1fc);
+//   background-color: #2041ba;
   position: fixed;
   top: 50px;
   .wii_nav_container {
     width: 1000px;
     margin: 0 auto;
+    
     .wii_main_subnav {
       & > li {
         float: left;
@@ -114,9 +116,9 @@ export default {
         padding: 0 10px;
         position: relative;
         cursor: pointer;
-        span {
-          color: white;
-        }
+        // span {
+        //   color: white;
+        // }
         &:hover {
           border-radius: 5px;
           box-shadow: 0 0 15px -5px black;
@@ -131,7 +133,7 @@ export default {
           min-width: 55px;
           box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.5);
           background: linear-gradient(to bottom, #fff, #ddf1fc);
-          z-index: 9999;
+         
           li {
             width: 100%;
             height: 30px;
