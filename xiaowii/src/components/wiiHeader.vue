@@ -2,7 +2,7 @@
     <div class="wii_header">
         <div class="wii_header_container clearfix">
             <div class="company_logo fl">
-                <a href="javascript:;">
+                <a href="javascript:;" @click="goToFirstPage()">
                     <img src="../assets/company_logo.png" alt="">
                 </a>
             </div>
@@ -28,7 +28,12 @@ export default {
   data() {
     return {
       msg: "this is wii header!!!"
-    };
+    }
+  },
+  methods:{
+    goToFirstPage(){
+      this.$router.push('/')
+    }
   }
 };
 </script>

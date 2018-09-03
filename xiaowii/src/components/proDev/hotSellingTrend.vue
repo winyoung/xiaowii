@@ -38,6 +38,13 @@
     <div class="hot_selling_trend_chart">
 
     </div>
+    <div class="hot_selling_trend_proImg">
+      <ul class="clearfix">
+        <li v-for="(item, index) in hotTopImgs" :key="index">
+          <img :src="item" alt="">
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 <style lang="less">
@@ -67,6 +74,7 @@
         left: 530px;
       }
       ul {
+        width: 150px;
         position: absolute;
         left: 74px;
         box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.5);
@@ -107,10 +115,29 @@
   }
   .hot_selling_trend_chart {
     position: absolute;
-    top: 100px;
+    top: 120px;
     width: 100%;
-    height: 400px;
+    height: 415px;
     border: 1px solid red;
+  }
+  .hot_selling_trend_proImg {
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    top: 470px;
+    ul{
+      padding-left: 110px;
+      li{
+        width: 60px;
+        height: 60px;
+        float: left;
+        margin-right: 20px;
+        img{
+          width: 60px;
+          height: 60px;
+        }
+      }
+    }
   }
 }
 </style>
@@ -127,7 +154,8 @@ export default {
       hotsearch: [],
       categoryInputVal: "品类",
       timeInpurVal: "时间",
-      channelInputVal: "渠道"
+      channelInputVal: "渠道",
+      hotTopImgs: []
     };
   },
   methods: {
@@ -226,119 +254,148 @@ export default {
     // }
   },
   mounted() {
-    var myChart = this.$echarts.init(
-      document.querySelector(".hot_selling_trend_chart")
-    );
-    // 绘制图表
-    myChart.setOption({
-      title: {
-        text: "热卖趋势"
-      },
-      // tooltip: {},
-      // xAxis: {
-      //   data: ["办公椅", "电竞椅", "躺椅", "桌子", "沙发", "板凳"]
-      // },
-      // yAxis: {},
-      // series: [
-      //   {
-      //     name: "销量",
-      //     type: "bar",
-      //     data: [5, 20, 36, 10, 10, 20]
-      //   }
-      // ]
-       tooltip : {
-        trigger: 'axis',
-        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
-            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+    //图形数据与显示
+    var that = this;
+    (function(that) {
+      var myChart = that.$echarts.init(
+        document.querySelector(".hot_selling_trend_chart")
+      );
+      // 绘制图表
+      myChart.setOption({
+        title: {
+          text: "热卖趋势"
+        },
+        tooltip: {},
+        xAxis: {
+          data: [
+            "办公椅",
+            "电竞椅",
+            "躺椅",
+            "桌子",
+            "沙发",
+            "板凳",
+            "xxx1",
+            "xxx2",
+            "xxx3",
+            "xxx4"
+          ]
+        },
+        yAxis: {},
+        series: [
+          {
+            name: "销量",
+            type: "bar",
+            data: [100, 90, 80, 70, 60, 30, 20, 15, 10, 8]
+          }
+        ]
+        // tooltip: {
+        //   trigger: "axis",
+        //   axisPointer: {
+        //     // 坐标轴指示器，坐标轴触发有效
+        //     type: "shadow" // 默认为直线，可选为：'line' | 'shadow'
+        //   }
+        // },
+        // legend: {
+        //   data: ["开审", "邮件营销", "联盟广告", "视频广告", "搜索引擎"]
+        // },
+        // grid: {
+        //   left: "5%",
+        //   right: "4%",
+        //   bottom: "3%",
+        //   containLabel: true
+        // },
+        // xAxis: {
+        //   type: "value"
+        // },
+        // yAxis: {
+        //   type: "category",
+        //   data: ["办公椅", "电竞椅", "躺椅", "桌子", "沙发", "板凳", "软椅"]
+        // },
+        // series: [
+        //   {
+        //     name: "直接访问",
+        //     type: "bar",
+        //     stack: "总量",
+        //     label: {
+        //       normal: {
+        //         show: true,
+        //         position: "insideRight"
+        //       }
+        //     },
+        //     data: [320, 302, 301, 334, 390, 330, 320]
+        //   },
+        //   {
+        //     name: "邮件营销",
+        //     type: "bar",
+        //     stack: "总量",
+        //     label: {
+        //       normal: {
+        //         show: true,
+        //         position: "insideRight"
+        //       }
+        //     },
+        //     data: [120, 132, 101, 134, 90, 230, 210]
+        //   },
+        //   {
+        //     name: "联盟广告",
+        //     type: "bar",
+        //     stack: "总量",
+        //     label: {
+        //       normal: {
+        //         show: true,
+        //         position: "insideRight"
+        //       }
+        //     },
+        //     data: [220, 182, 191, 234, 290, 330, 310]
+        //   },
+        //   {
+        //     name: "视频广告",
+        //     type: "bar",
+        //     stack: "总量",
+        //     label: {
+        //       normal: {
+        //         show: true,
+        //         position: "insideRight"
+        //       }
+        //     },
+        //     data: [150, 212, 201, 154, 190, 330, 410]
+        //   },
+        //   {
+        //     name: "搜索引擎",
+        //     type: "bar",
+        //     stack: "总量",
+        //     label: {
+        //       normal: {
+        //         show: true,
+        //         position: "insideRight"
+        //       }
+        //     },
+        //     data: [820, 832, 901, 934, 1290, 1330, 1320]
+        //   }
+        // ]
+      });
+      myChart.on("click", function(param) {
+        var name = param.name;
+        if (name == "办公椅") {
+          console.log(">>>>>>>>>>>>>>办公椅");
+        } else if (name == "电竞椅") {
+          console.log(">>>>>>>>>>>>>>电竞椅");
         }
-    },
-    legend: {
-        data: ['开审', '邮件营销','联盟广告','视频广告','搜索引擎']
-    },
-    grid: {
-        left: '5%',
-        right: '4%',
-        bottom: '3%',
-        containLabel: true
-    },
-    xAxis:  {
-        type: 'value'
-    },
-    yAxis: {
-        type: 'category',
-        data: ['办公椅','电竞椅','躺椅','桌子','沙发','板凳','软椅']
-    },
-    series: [
-        {
-            name: '直接访问',
-            type: 'bar',
-            stack: '总量',
-            label: {
-                normal: {
-                    show: true,
-                    position: 'insideRight'
-                }
-            },
-            data: [320, 302, 301, 334, 390, 330, 320]
-        },
-        {
-            name: '邮件营销',
-            type: 'bar',
-            stack: '总量',
-            label: {
-                normal: {
-                    show: true,
-                    position: 'insideRight'
-                }
-            },
-            data: [120, 132, 101, 134, 90, 230, 210]
-        },
-        {
-            name: '联盟广告',
-            type: 'bar',
-            stack: '总量',
-            label: {
-                normal: {
-                    show: true,
-                    position: 'insideRight'
-                }
-            },
-            data: [220, 182, 191, 234, 290, 330, 310]
-        },
-        {
-            name: '视频广告',
-            type: 'bar',
-            stack: '总量',
-            label: {
-                normal: {
-                    show: true,
-                    position: 'insideRight'
-                }
-            },
-            data: [150, 212, 201, 154, 190, 330, 410]
-        },
-        {
-            name: '搜索引擎',
-            type: 'bar',
-            stack: '总量',
-            label: {
-                normal: {
-                    show: true,
-                    position: 'insideRight'
-                }
-            },
-            data: [820, 832, 901, 934, 1290, 1330, 1320]
-        }
-    ]
-    });
-    myChart.on("click", function(param) {
-      var name = param.name;
-      if (name == "办公椅") {
-        console.log('>>>>>>>>>>>>>>办公椅')
-      } else if (name == "电竞椅") {
-        console.log('>>>>>>>>>>>>>>电竞椅')
-      } 
-    });
+      });
+    })(that);
+
+    //前十十张商品图
+    (function(that) {
+      that.$axios.get(
+        "https://www.easy-mock.com/mock/5b8cacaa5ae7a7318a66513b/example/imgs"
+      )
+      .then(res=>{
+        that.hotTopImgs = res.data.data;
+      })
+      .catch(error=>{
+        console.log(error);
+      })
+    })(that);
   }
 };
 </script>
