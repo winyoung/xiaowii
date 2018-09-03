@@ -149,8 +149,14 @@
     margin: 0 auto;
     font-family: Microsoft YaHei;
     font-size: 14px;
-    color: #42484e;
+    color: #575e64;
     position: relative;
     -ms-overflow-x: hidden;
     overflow-x: auto;
+   }
+   .fl{
+       float: left;
+   }
+   .fr{
+       float: right;
    }

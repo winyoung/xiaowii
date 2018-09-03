@@ -1,12 +1,12 @@
 <template>
     <div class="wii_header">
-        <div class="wii_header_container">
-            <div class="company_logo">
+        <div class="wii_header_container clearfix">
+            <div class="company_logo fl">
                 <a href="javascript:;">
                     <img src="../assets/company_logo.png" alt="">
                 </a>
             </div>
-            <div class="wii_header_info clearfix">
+            <div class="wii_header_info fr clearfix">
                 <div class="wii_email">
                     <i class="iconfont icon-39"></i>
                     <span>收件箱</span>
@@ -35,9 +35,10 @@ export default {
 
 <style lang="less">
 .wii_header {
+  z-index:999;
   width: 100%;
   height: 50px;
-    background: linear-gradient(#fff, #ddf1fc);
+  background: linear-gradient(#fff, #ddf1fc);
   //   border-radius: 0 0 20px 20px;
   // background-color: #2041ba;
   position: fixed;
@@ -47,12 +48,9 @@ export default {
     width: 1000px;
     height: 50px;
     margin: 0 auto;
-    position: relative;
     .company_logo {
       width: 50px;
       height: 50px;
-      position: absolute;
-      left: 0;
       a {
         width: 100%;
         height: 100%;
@@ -65,8 +63,6 @@ export default {
     .wii_header_info {
       width: 300px;
       height: 50px;
-      position: absolute;
-      right: 0;
       vertical-align: middle;
       & > div {
         float: left;
