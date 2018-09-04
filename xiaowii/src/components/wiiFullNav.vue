@@ -35,7 +35,7 @@
     width: 100%;
     background: url(../assets/getting-started-top-bg.svg) no-repeat;
     background-size: cover;
-    margin-top: 92px;
+    margin-top: 80px;
     .wii_full_container{
         width: 1000px;
         margin: 0 auto;
@@ -95,7 +95,7 @@ export default {
       }
     },
     mounted(){
-        this.clientHeight = document.documentElement.clientHeight + 'px';
+        this.clientHeight = document.documentElement.clientHeight-78 + 'px';
         this.$refs.fullnav.style.height = this.clientHeight;
     }
 }

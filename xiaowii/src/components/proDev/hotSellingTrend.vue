@@ -34,16 +34,27 @@
       </div>
       <input class="hot_setsearch" type="button" value="确定" @click.prevent="setSearch(categoryInputVal,timeInpurVal,channelInputVal)">
     </div>
+
     <!-- 图标展示 -->
     <div class="hot_selling_trend_chart">
 
     </div>
+    <!-- 热销榜 飙升榜 -->
+    <div class="hot_ranking_list">
+      <span class="hot_ranking_greatsale" @click="toggleRanking('销量',$event)">热销榜</span>
+      <span class="hot_ranking_greatup" @click="toggleRanking('涨幅', $event)">飙升榜</span>
+    </div>
+    <!-- 图片遮罩层 -->
     <div class="hot_selling_trend_proImg">
       <ul class="clearfix">
         <li v-for="(item, index) in hotTopImgs" :key="index">
           <img :src="item" alt="">
         </li>
       </ul>
+    </div>
+    <!-- 弹出框 商品详情，客户评论等 -->
+    <div class="hot_selling_trend_detail">  
+      
     </div>
   </div>
 </template>
@@ -115,27 +126,43 @@
   }
   .hot_selling_trend_chart {
     position: absolute;
-    top: 120px;
+    top: 110px;
     width: 100%;
-    height: 415px;
-    border: 1px solid red;
+    height: 460px;
+    border: 1px solid #d2d3d8;
   }
   .hot_selling_trend_proImg {
     position: absolute;
     width: 100%;
     height: 60px;
-    top: 470px;
-    ul{
+    top: 500px;
+    ul {
       padding-left: 110px;
-      li{
+      li {
         width: 60px;
         height: 60px;
         float: left;
         margin-right: 20px;
-        img{
+        img {
           width: 60px;
           height: 60px;
         }
+      }
+    }
+  }
+  .hot_ranking_list {
+    position: absolute;
+    top: 84px;
+    left: 500px;
+    transform: translateX(-50%);
+    font-size: 16px;
+    font-weight: 600;
+    span {
+      padding: 5px;
+      cursor: pointer;
+      &:nth-child(1) {
+        border: 1px solid #d2d3d8;
+        border-bottom: 1px solid #fff;
       }
     }
   }
@@ -155,7 +182,10 @@ export default {
       categoryInputVal: "品类",
       timeInpurVal: "时间",
       channelInputVal: "渠道",
-      hotTopImgs: []
+      hotTopImgs: [],
+      chartsXdata: [],
+      chartsYdata: [],
+      chartsYname: "销量"
     };
   },
   methods: {
@@ -222,6 +252,7 @@ export default {
           break;
       }
     },
+    //条件搜索
     setSearch(cate, time, channel) {
       this.$axios
         .post(
@@ -238,25 +269,9 @@ export default {
         .catch(error => {
           console.log(error);
         });
-    }
-    // hideSelect(val) {
-    //   switch(val){
-    //     case 'category':
-    //     this.categoryShow = !this.categoryShow;
-    //     break;
-    //     case 'time':
-    //     this.timeShow = !this.timeShow;
-    //     break;
-    //     case 'channel':
-    //     this.channelShow = !this.channelShow;
-    //     break;
-    //   }
-    // }
-  },
-  mounted() {
-    //图形数据与显示
-    var that = this;
-    (function(that) {
+    },
+    //设置图表
+    setEcharts(that, xdata, ydata, name) {
       var myChart = that.$echarts.init(
         document.querySelector(".hot_selling_trend_chart")
       );
@@ -267,134 +282,92 @@ export default {
         },
         tooltip: {},
         xAxis: {
-          data: [
-            "办公椅",
-            "电竞椅",
-            "躺椅",
-            "桌子",
-            "沙发",
-            "板凳",
-            "xxx1",
-            "xxx2",
-            "xxx3",
-            "xxx4"
-          ]
+          data: xdata
         },
         yAxis: {},
+        grid: {
+          bottom: "16%"
+          // containLabel: true
+        },
         series: [
           {
-            name: "销量",
+            name: name,
             type: "bar",
-            data: [100, 90, 80, 70, 60, 30, 20, 15, 10, 8]
+            data: ydata
           }
         ]
-        // tooltip: {
-        //   trigger: "axis",
-        //   axisPointer: {
-        //     // 坐标轴指示器，坐标轴触发有效
-        //     type: "shadow" // 默认为直线，可选为：'line' | 'shadow'
-        //   }
-        // },
-        // legend: {
-        //   data: ["开审", "邮件营销", "联盟广告", "视频广告", "搜索引擎"]
-        // },
-        // grid: {
-        //   left: "5%",
-        //   right: "4%",
-        //   bottom: "3%",
-        //   containLabel: true
-        // },
-        // xAxis: {
-        //   type: "value"
-        // },
-        // yAxis: {
-        //   type: "category",
-        //   data: ["办公椅", "电竞椅", "躺椅", "桌子", "沙发", "板凳", "软椅"]
-        // },
-        // series: [
-        //   {
-        //     name: "直接访问",
-        //     type: "bar",
-        //     stack: "总量",
-        //     label: {
-        //       normal: {
-        //         show: true,
-        //         position: "insideRight"
-        //       }
-        //     },
-        //     data: [320, 302, 301, 334, 390, 330, 320]
-        //   },
-        //   {
-        //     name: "邮件营销",
-        //     type: "bar",
-        //     stack: "总量",
-        //     label: {
-        //       normal: {
-        //         show: true,
-        //         position: "insideRight"
-        //       }
-        //     },
-        //     data: [120, 132, 101, 134, 90, 230, 210]
-        //   },
-        //   {
-        //     name: "联盟广告",
-        //     type: "bar",
-        //     stack: "总量",
-        //     label: {
-        //       normal: {
-        //         show: true,
-        //         position: "insideRight"
-        //       }
-        //     },
-        //     data: [220, 182, 191, 234, 290, 330, 310]
-        //   },
-        //   {
-        //     name: "视频广告",
-        //     type: "bar",
-        //     stack: "总量",
-        //     label: {
-        //       normal: {
-        //         show: true,
-        //         position: "insideRight"
-        //       }
-        //     },
-        //     data: [150, 212, 201, 154, 190, 330, 410]
-        //   },
-        //   {
-        //     name: "搜索引擎",
-        //     type: "bar",
-        //     stack: "总量",
-        //     label: {
-        //       normal: {
-        //         show: true,
-        //         position: "insideRight"
-        //       }
-        //     },
-        //     data: [820, 832, 901, 934, 1290, 1330, 1320]
-        //   }
-        // ]
       });
       myChart.on("click", function(param) {
         var name = param.name;
-        if (name == "办公椅") {
-          console.log(">>>>>>>>>>>>>>办公椅");
-        } else if (name == "电竞椅") {
-          console.log(">>>>>>>>>>>>>>电竞椅");
+        xdata.forEach((v, i) => {
+          if (name == v) {
+            // console.log(v,name,'>>>>>>>>>>>>>>>>>>>')
+          }
+        });
+      });
+    },
+    toggleRanking(name, event) {
+      event.target.parentNode.children[0].style.border = "none";
+      event.target.parentNode.children[1].style.border = "none";
+      event.target.style.border = "1px solid #d2d3d8";
+      event.target.style.borderBottom = "1px solid #fff";
+      //根据不同排行类型获取数据并重新渲染图形
+      var that = this;
+      new Promise((resolve, reject) => {
+        that.$axios
+          .get(
+            "https://www.easy-mock.com/mock/5b8cacaa5ae7a7318a66513b/example/chartsData"
+          )
+          .then(res => {
+            resolve(res);
+          });
+      }).then(res => {
+        // console.log(res, "````````````````````");
+        if (name == "销量") {
+            that.chartsXdata = res.data.data.chartsXdata;
+            that.chartsYdata = res.data.data.chartsYdata;
+            that.setEcharts(that, that.chartsXdata, that.chartsYdata, name);
+        } else if (name == "涨幅") {
+          that.chartsXdata = res.data.rankingData.chartsXdata;
+          that.chartsYdata = res.data.rankingData.chartsYdata;
+          that.setEcharts(that, that.chartsXdata, that.chartsYdata, name);
         }
+      });
+    }
+  },
+  mounted() {
+    //图形数据与显示
+    var that = this;
+    (function(that) {
+      new Promise((resovle, reject) => {
+        //获取图形所需数据
+        that.$axios
+          .get(
+            "https://www.easy-mock.com/mock/5b8cacaa5ae7a7318a66513b/example/chartsData"
+          )
+          .then(res => {
+            resovle(res);
+          });
+      }).then(res => {
+        that.chartsXdata = res.data.data.chartsXdata;
+        that.chartsYdata = res.data.data.chartsYdata;
+        // console.log( that.chartsXdata , that.chartsYdata)
+        that.setEcharts(that, that.chartsXdata, that.chartsYdata, "销量");
       });
     })(that);
 
     //前十十张商品图
     (function(that) {
-      that.$axios.get(
-        "https://www.easy-mock.com/mock/5b8cacaa5ae7a7318a66513b/example/imgs"
-      )
-      .then(res=>{
-        that.hotTopImgs = res.data.data;
-      })
-      .catch(error=>{
-        console.log(error);
-      })
+      that.$axios
+        .get(
+          "https://www.easy-mock.com/mock/5b8cacaa5ae7a7318a66513b/example/imgs"
+        )
+        .then(res => {
+          that.hotTopImgs = res.data.data;
+        })
+        .catch(error => {
+          console.log(error);
+        });
     })(that);
   }
 };
