@@ -3,9 +3,9 @@
         <div class="wii_nav_container">
             <ul class="clearfix wii_main_subnav">
                 <li>
-                    <router-link to='/hotSellingTrend'>
+                    <!-- <router-link to='/hotSellingTrend'> -->
                         <span>产品开发</span>
-                    </router-link>
+                    <!-- </router-link> -->
                     <ul>
                         <li @click='setPath("热卖趋势")'>热卖趋势</li>
                         <li @click='setPath("爆款挖掘")'>爆款挖掘</li>

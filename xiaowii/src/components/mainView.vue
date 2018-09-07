@@ -54,7 +54,7 @@ export default {
       return response;
     });
 
-    console.log("mainView组件挂载完成");
+    // console.log("mainView组件挂载完成");
     if (this.$route.path != "/") {
       this.isShow = false;
     } else {
@@ -62,7 +62,7 @@ export default {
     }
   },
   updated() {
-    console.log("mainView组件更新了");
+    // console.log("mainView组件更新了");
     if (this.$route.path != "/") {
       this.isShow = false;
     } else {

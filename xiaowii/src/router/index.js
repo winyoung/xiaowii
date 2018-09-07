@@ -7,6 +7,7 @@ import newProDev from '../components/proDev/newProDev.vue'
 import onlinePro from '../components/proDev/onlinePro.vue'
 import proManage from '../components/proDev/proManage.vue'
 import setting from '../components/proDev/setting.vue'
+import showProDetail from '../components/reusableCom/showProDetail.vue'
 
 
 Vue.use(Router)
@@ -20,7 +21,10 @@ export default new Router({
       children:[
         {
           path: 'hotSellingTrend',
-          component: hotSellingTrend
+          component: hotSellingTrend,
+          children:[
+            {path:'showProDetail',component:showProDetail}
+          ]
         },
         {
           path: 'burstingDig',
