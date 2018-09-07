@@ -1,0 +1,316 @@
+//弹出框动画
+.v-enter-active,
+.v-leave-active {
+    transition: all 0.5s;
+}
+
+.v-leave-to,
+.v-enter {
+    opacity: 0;
+    transform: translateY(-100px);
+}
+
+.v-enter-to,
+.v-leave {
+    opacity: 1;
+}
+
+//热卖趋势
+.hot_selling_trend {
+    position: relative;
+    top: 120px; 
+    //条件搜索
+    .hot_selling_trend_search {
+        z-index: 888;
+        width: 100%;
+        height: 50px;
+        border: 1px solid #d2d3d8;
+        background-color: #f2fafe;
+        position: absolute;
+        padding-left: 100px;
+        .hot_search {
+            width: 25%; // border: 1px solid red;
+            position: absolute;
+            top: 12px;
+            &:nth-child(1) {
+                left: 30px;
+            }
+            &:nth-child(2) {
+                left: 280px;
+            }
+            &:nth-child(3) {
+                left: 530px;
+            }
+            ul {
+                width: 150px;
+                position: absolute;
+                left: 74px;
+                box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.5);
+                background: linear-gradient(to bottom, #fff, #ddf1fc);
+                li {
+                    width: 100%;
+                    height: 30px;
+                    line-height: 30px;
+                    padding: 0 10px;
+                    &:hover {
+                        background: linear-gradient(to right, #fff, #ddf1fc);
+                        cursor: pointer;
+                    }
+                }
+            }
+            input {
+                border: 1px solid #d2d3d8;
+                width: 150px;
+                height: 25px;
+                padding-left: 10px;
+                cursor: pointer;
+            }
+            i {
+                position: absolute;
+                left: 203px;
+                top: 3px;
+            }
+        }
+        .hot_setsearch {
+            position: absolute;
+            right: 100px;
+            top: 12px;
+            width: 90px;
+            height: 25px;
+            background-color: #c3ddec;
+        }
+    } 
+    //数据可视化图形
+    .hot_selling_trend_chart {
+        position: absolute;
+        top: 110px;
+        width: 100%;
+        height: 460px;
+        border: 1px solid #d2d3d8;
+    }
+     //前十十张图片遮层
+    .hot_selling_trend_proImg {
+        position: absolute;
+        width: 100%;
+        height: 60px;
+        top: 500px;
+        ul {
+            padding-left: 110px;
+            li {
+                width: 60px;
+                height: 60px;
+                float: left;
+                margin-right: 20px;
+                img {
+                    width: 60px;
+                    height: 60px;
+                }
+            }
+        }
+    }
+     //热销榜,飙升榜
+    .hot_ranking_list {
+        position: absolute;
+        top: 84px;
+        left: 500px;
+        transform: translateX(-50%);
+        font-size: 16px;
+        font-weight: 600;
+        span {
+            padding: 5px;
+            cursor: pointer;
+            &:nth-child(1) {
+                border: 1px solid #d2d3d8;
+                border-bottom: 1px solid #fff;
+            }
+        }
+    }
+     //商品详情，客户评价等
+    .hot_selling_trend_detail {
+        z-index: 999;
+        .deleteBox {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 0;
+            right: 0px;
+            background: url(../../images/shanchu.png) no-repeat;
+            background-size: cover;
+        }
+        z-index: 889;
+        position: absolute;
+        top: 60px;
+        left: 500px;
+        margin-left: -400px;
+        width: 800px;
+        height: 500px;
+        background-color: #fff;
+        box-shadow: 0 0 15px -4px #868282;
+        .detail_category {
+            margin-top: 10px;
+            width: 100%; // border-bottom: 1px solid rgb(167, 157, 157);
+            span {
+                display: inline-block;
+                width: 24%;
+                text-align: center;
+                cursor: pointer;
+                padding: 0 10px;
+            }
+            .detail_active {
+                color: #409EFF;
+            }
+        }
+        .detail_pro,
+        .user_comments,
+        .user_questions,
+        .cost_estimate {
+            width: 100%;
+            position: absolute;
+            top: 50px;
+        } 
+        // 商品详情
+        .detail_pro {
+            // border: 1px solid red;
+            .detail_pro_imgs {
+                width: 50%;
+                height: 240px;
+                margin-left: 400px;
+                transform: translateX(-50%);
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .detail_pro_info {
+                height: 200px;
+                overflow: auto;
+                table {
+                    width: 80%;
+                    margin-left: 400px;
+                    transform: translateX(-50%);
+                    border-collapse: collapse;
+                    tr {
+                        height: 25px;
+                        td {
+                            font-size: 12px;
+                            text-align: center;
+                            border: 1px solid #ddd;
+                            &:nth-child(1) {
+                                background-color: #f2fafe;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+         //客户评价
+        .user_comments {
+            overflow: auto;
+            width: 90%;
+            height: 445px;
+            margin-left: 400px;
+            transform: translateX(-50%);
+            ul {
+                li {
+                    padding: 10px;
+                    margin-bottom: 20px;
+                    border: 1px solid #d9d9d9;
+                    border-radius: 5px;
+                }
+            }
+            .username {
+                i {
+                    font-size: 16px;
+                }
+                span {
+                    margin-left: 10px;
+                }
+            }
+            .commentsTime {
+                p {
+                    padding-right: 20px;
+                    text-align: right;
+                }
+            }
+        } 
+        //客户问题
+        .user_questions {
+            overflow: auto;
+            width: 90%;
+            height: 445px;
+            margin-left: 400px;
+            transform: translateX(-50%);
+            ul {
+                li {
+                    padding: 10px;
+                    margin-bottom: 20px;
+                    border: 1px solid #d9d9d9;
+                    border-radius: 5px;
+                    div:nth-child(1) {
+                        margin-bottom: 10px;
+                    }
+                    span {
+                        font-weight: 600;
+                    }
+                    p {
+                        padding-left: 65px;
+                        margin-top: -19px;
+                    }
+                }
+            }
+        } 
+        //成本预估
+        .cost_estimate {
+            width: 90%;
+            height: 445px;
+            margin-left: 400px;
+            transform: translateX(-50%);
+            border: 1px solid #d9d9d9;
+            padding: 10px 120px;
+            form {
+                div {
+                    width: 100%;
+                    height: 40px;
+                    line-height: 40px;
+                    position: relative;
+                    input {
+                        border: 1px solid #d9d9d9;
+                        height: 30px;
+                        width: 220px;
+                        position: absolute;
+                        right: 0;
+                        top: 5px;
+                        padding-left: 10px;
+                    }
+                }
+            }
+            .cost_estimate_submit{
+              width: 100%;
+              margin-top: 20px;
+              button{
+                width: 150px;
+                height: 35px;
+                border-radius: 3px;
+                background-color: #409EFF;
+                color: white;
+                font-size:16px;
+                margin-left: 239px;
+                transform: translateX(-50%)
+              }
+            }
+            .cost_estimate_result{
+              width: 100%;
+              margin-top: 20px;
+              input{
+                width: 200px;
+                height: 35px;
+                border-radius: 3px;
+                border: 1px solid #d9d9d9;
+                margin-left: 239px;
+                transform: translateX(-50%);
+                padding-left: 10px;
+              }
+            }
+        }
+    }
+}

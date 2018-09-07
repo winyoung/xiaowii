@@ -4,7 +4,7 @@ const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 
-function resolve (dir) {
+function resolve(dir) {
   return path.join(__dirname, '..', dir)
 }
 
@@ -77,10 +77,13 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        include: [ ],
+        include: [],
         loader: 'style-loader!css-loader',
-       
-      }
+      },
+      // {
+      //   test: /\.(eot|woff|ttf)$/,
+      //   loader: "file-loader"
+      // }
     ]
   },
   node: {

@@ -7,9 +7,12 @@ import vuex from 'vuex'
 import store from './vuex/store'
 import axios from 'axios'
 import echarts from 'echarts'
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 
 //引入初始化样式表
 import './assets/css/wiiBase.css'
+Vue.use(ElementUI);
 Vue.use(vuex)
 Vue.prototype.$axios = axios;
 Vue.prototype.$echarts = echarts;
