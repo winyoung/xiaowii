@@ -1,6 +1,6 @@
 .v-enter-active,
 .v-leave-active {
-  transition: all 0.5s;
+  transition: all 0.3s;
 }
 .v-leave-to,
 .v-enter {
@@ -120,10 +120,11 @@
 .hot_selling_trend .hot_selling_trend_detail {
   z-index: 999;
   z-index: 889;
-  position: absolute;
-  top: 60px;
-  left: 500px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
   margin-left: -400px;
+  margin-top: -175px;
   width: 800px;
   height: 500px;
   background-color: #fff;

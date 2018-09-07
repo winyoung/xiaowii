@@ -95,7 +95,7 @@ export default {
       }
     },
     mounted(){
-        this.clientHeight = document.documentElement.clientHeight-78 + 'px';
+        this.clientHeight = document.documentElement.clientHeight-88 + 'px';
         this.$refs.fullnav.style.height = this.clientHeight;
     }
 }

@@ -1,7 +1,7 @@
 //弹出框动画
 .v-enter-active,
 .v-leave-active {
-    transition: all 0.5s;
+    transition: all 0.3s;
 }
 
 .v-leave-to,
@@ -138,10 +138,14 @@
             background-size: cover;
         }
         z-index: 889;
-        position: absolute;
-        top: 60px;
-        left: 500px;
+        // position: absolute;
+        position: fixed;
+        top: 50%;
+        left: 50%;
         margin-left: -400px;
+        margin-top: -175px;
+        // transform: translate(-50%, -50%);
+        
         width: 800px;
         height: 500px;
         background-color: #fff;
