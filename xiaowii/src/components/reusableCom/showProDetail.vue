@@ -174,7 +174,6 @@
 export default {
   data() {
     return {
-      showBox: true, //弹出框
       detailShow: true, //商品详情
       commentsShow: false, //客户评价
       questionsShow: false, //客户问题
@@ -194,8 +193,10 @@ export default {
   methods: {
     //删除弹出框
     deleteBox() {
-        this.$router.go(-1);
       this.$emit('deletebox');
+      setTimeout(() => {  
+      this.$router.go(-1);
+      }, 300);
     },
     //切换商品详情，客户评论等
     toggleDetail(val, event) {

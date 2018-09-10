@@ -1,37 +1,33 @@
 <template>
     <div class="hot_sale">
         <!-- 条件搜索 -->
-        <div class="search clearfix">
-            <div class="search_input" @click="searchInput($event)">
-                <input type="text" readonly placeholder="按渠道">
-                <ul >
-                    <li v-for="(item, index) in ulForSelectData.channel" :key="index">{{item}}</li>
-                </ul>
-            </div>
-            <div class="search_input" @click="searchInput($event)">
-                <input type="text" readonly placeholder="按材质">
-                <ul>
-                    <li v-for="(item, index) in ulForSelectData.texture" :key="index">{{item}}</li>
-                </ul>
-            </div>
-            <div class="search_input" @click="searchInput($event)">
-                <input type="text" readonly placeholder="按颜色">
-                <ul >
-                    <li v-for="(item, index) in ulForSelectData.color" :key="index">{{item}}</li>
-                </ul>
-            </div>
-            <div class="search_input" @click="searchInput($event)">
-                <input type="text" readonly placeholder="按功能">
-                <ul >
-                    <li v-for="(item, index) in ulForSelectData.function" :key="index">{{item}}</li>
-                </ul>
-            </div>
+        <div class="search">
+            <el-select clearable   v-model='selectVal.channelvalue' placeholder="渠道">
+                <el-option v-for="(item,index) in ulForSelectData.channel" :key="index" :value="item">
+                </el-option>
+            </el-select>
+            <el-select clearable  v-model='selectVal.texturevalue' placeholder="材质">
+                <el-option v-for="(item,index) in ulForSelectData.texture" :key="index" :value="item">
+                </el-option>
+            </el-select>
+            <el-select clearable  v-model='selectVal.colorvalue' placeholder="颜色">
+                <el-option v-for="(item,index) in ulForSelectData.color" :key="index" :value="item">
+                </el-option>
+            </el-select>
+            <el-select clearable  v-model='selectVal.functionvalue' placeholder="功能">
+                <el-option v-for="(item,index) in ulForSelectData.function" :key="index" :value="item">
+                </el-option>
+            </el-select>
             <div class="search_input">
-                <input type="text" placeholder="请输入关键词">
+                <input type="text" placeholder="请输入关键词" v-model='selectVal.keywords'>
             </div>
-            <div class="search_input">
-                <button>确定</button>
+            <div class="submitBtn">
+                <button @click='submitSearch()'>确定</button>
             </div>
+        </div>
+        <!-- 产品列表 -->
+        <div class="proList">
+            
         </div>
     </div>
 </template>
@@ -48,37 +44,23 @@ export default {
         texture: [],
         color: [],
         function: []
-      } //各个下拉框数据
+      }, //各个下拉框数据
+      selectVal:{
+        channelvalue:'',
+        texturevalue:'',
+        colorvalue:'',
+        functionvalue:'',
+        keywords:''
+      },//input框选定数据
     };
   },
   methods: {
-    //条件搜索下拉框的显示隐藏
-    searchInput(event) {
-      var uls = document.querySelectorAll('.search_input ul');
-      console.log(uls)
-      for(var i=0; i<uls.length; i++){
-          uls[i].classList.remove('ulShow');
-      }
-      if (event.target.tagName == "INPUT") {
-        let ulVal = event.target.parentNode.children[1];
-        // if (ulVal.classList.contains("ulShow")) {
-        //   ulVal.classList.remove("ulShow");
-        //   ulVal.classList.add("ulHide");
-        // } else {
-        //   ulVal.classList.remove("ulHide");
-        //   ulVal.classList.add("ulShow");
-        // }
-        ulVal.classList.toggle('ulShow');
-      } else if (event.target.tagName == "DIV") {
-        let ulVal = event.target.children[1];
-        if (ulVal.classList.contains("ulShow")) {
-          ulVal.classList.remove("ulShow");
-          ulVal.classList.add("ulHide");
-        } else {
-          ulVal.classList.remove("ulHide");
-          ulVal.classList.add("ulShow");
-        }
-      }
+    //条件搜素提交按钮点击
+    submitSearch(){
+        var data=this.selectVal;
+        console.log(data);
+        //此处提交数据
+        // this.$axios.get....
     }
   },
   mounted() {
@@ -88,7 +70,6 @@ export default {
         "https://www.easy-mock.com/mock/5b8cacaa5ae7a7318a66513b/example/burstingInputVal"
       )
       .then(res => {
-        console.log(res.data);
         this.ulForSelectData.channel = res.data.anqudao;
         this.ulForSelectData.texture = res.data.ancaizhi;
         this.ulForSelectData.color = res.data.anyanse;
