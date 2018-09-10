@@ -2,66 +2,6 @@
   position: relative;
   top: 120px;
 }
-.hot_selling_trend .hot_selling_trend_search {
-  z-index: 888;
-  width: 100%;
-  height: 50px;
-  border: 1px solid #d2d3d8;
-  background-color: #f2fafe;
-  position: absolute;
-  padding-left: 100px;
-}
-.hot_selling_trend .hot_selling_trend_search .hot_search {
-  width: 25%;
-  position: absolute;
-  top: 12px;
-}
-.hot_selling_trend .hot_selling_trend_search .hot_search:nth-child(1) {
-  left: 30px;
-}
-.hot_selling_trend .hot_selling_trend_search .hot_search:nth-child(2) {
-  left: 280px;
-}
-.hot_selling_trend .hot_selling_trend_search .hot_search:nth-child(3) {
-  left: 530px;
-}
-.hot_selling_trend .hot_selling_trend_search .hot_search ul {
-  width: 150px;
-  position: absolute;
-  left: 74px;
-  box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.5);
-  background: linear-gradient(to bottom, #fff, #ddf1fc);
-}
-.hot_selling_trend .hot_selling_trend_search .hot_search ul li {
-  width: 100%;
-  height: 30px;
-  line-height: 30px;
-  padding: 0 10px;
-}
-.hot_selling_trend .hot_selling_trend_search .hot_search ul li:hover {
-  background: linear-gradient(to right, #fff, #ddf1fc);
-  cursor: pointer;
-}
-.hot_selling_trend .hot_selling_trend_search .hot_search input {
-  border: 1px solid #d2d3d8;
-  width: 150px;
-  height: 25px;
-  padding-left: 10px;
-  cursor: pointer;
-}
-.hot_selling_trend .hot_selling_trend_search .hot_search i {
-  position: absolute;
-  left: 203px;
-  top: 3px;
-}
-.hot_selling_trend .hot_selling_trend_search .hot_setsearch {
-  position: absolute;
-  right: 100px;
-  top: 12px;
-  width: 90px;
-  height: 25px;
-  background-color: #c3ddec;
-}
 .hot_selling_trend .hot_selling_trend_chart {
   position: absolute;
   top: 110px;
