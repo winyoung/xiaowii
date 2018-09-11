@@ -7,10 +7,8 @@
       <wii-header></wii-header>
       <!-- 头部导航 -->
       <wii-main-nav></wii-main-nav>
-      <div class="container">
-        <!-- 子组件 -->
-        <router-view></router-view>
-      </div>
+      <!-- 子组件 -->
+      <router-view></router-view>
     </div>
     <div class="transitionBgbox"><img src="../assets/5-121204193R0-50.gif" alt=""></div>
   </div>

@@ -1,6 +1,8 @@
 .hot_selling_trend {
   position: relative;
   top: 120px;
+  width: 1000px;
+  margin: 0 auto;
 }
 .hot_selling_trend .hot_selling_trend_chart {
   position: absolute;

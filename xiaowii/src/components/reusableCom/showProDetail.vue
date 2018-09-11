@@ -1,170 +1,173 @@
 <template>
     <transition>
-        <div class="hot_selling_trend_detail" v-show="isShow">
-            <div class="deleteBox" @click="deleteBox()"></div>
-            <div class='detail_category'>
-                <span class="detail_active" @click="toggleDetail('proDetail', $event)">商品详情</span>|
-                <span @click="toggleDetail('comments', $event)">客户评价</span>|
-                <span @click="toggleDetail('questions', $event)">客户问题</span>|
-                <span @click="toggleDetail('estimate', $event)">成本预估</span>
-            </div>
-            <!-- 商品详情 -->
-            <div class="detail_pro" v-show="detailShow">
-                <div class="detail_pro_imgs">
-                    <img src="../../assets/test.jpg" alt="">
+        <div v-show="isShow" class="box">
+            <div class="hot_selling_trend_detail">
+                <div class="deleteBox" @click="deleteBox()"></div>
+                <div class='detail_category'>
+                    <span class="detail_active" @click="toggleDetail('proDetail', $event)">商品详情</span>|
+                    <span @click="toggleDetail('comments', $event)">客户评价</span>|
+                    <span @click="toggleDetail('questions', $event)">客户问题</span>|
+                    <span @click="toggleDetail('estimate', $event)">成本预估</span>
                 </div>
-                <div class="detail_pro_info">
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td colspan="2" class="info">Brand</td>
-                                <td>Larnn</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2" class="info">Color</td>
-                                <td>Gray</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2" class="info">Customer Reviews</td>
-                                <td>
-                                    4.9
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2" class="info">Item model number</td>
-                                <td>
-                                    MCS-LSCG
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2" class="info">Manufacturer</td>
-                                <td>
-                                    Larnn
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2" class="info">Shipping Weight</td>
-                                <td>
-                                    2 pounds
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2" class="info">Item Weight</td>
-                                <td>
-                                    1.1 pounds
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2" class="info">Product Dimensions</td>
-                                <td>
-                                    17.8 x 13.9 x 3.2 inches
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2" class="info">Product Dimensions</td>
-                                <td>
-                                    17.8 x 13.9 x 3.2 inches
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2" class="info">Product Dimensions</td>
-                                <td>
-                                    17.8 x 13.9 x 3.2 inches
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2" class="info">Product Dimensions</td>
-                                <td>
-                                    17.8 x 13.9 x 3.2 inches
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2" class="info">Product Dimensions</td>
-                                <td>
-                                    17.8 x 13.9 x 3.2 inches
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2" class="info">Product Dimensions</td>
-                                <td>
-                                    17.8 x 13.9 x 3.2 inches
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <!-- 商品详情 -->
+                <div class="detail_pro" v-show="detailShow">
+                    <div class="detail_pro_imgs">
+                        <img src="../../assets/test.jpg" alt="">
+                    </div>
+                    <div class="detail_pro_info">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td colspan="2" class="info">Brand</td>
+                                    <td>Larnn</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="info">Color</td>
+                                    <td>Gray</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="info">Customer Reviews</td>
+                                    <td>
+                                        4.9
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="info">Item model number</td>
+                                    <td>
+                                        MCS-LSCG
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="info">Manufacturer</td>
+                                    <td>
+                                        Larnn
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="info">Shipping Weight</td>
+                                    <td>
+                                        2 pounds
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="info">Item Weight</td>
+                                    <td>
+                                        1.1 pounds
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="info">Product Dimensions</td>
+                                    <td>
+                                        17.8 x 13.9 x 3.2 inches
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="info">Product Dimensions</td>
+                                    <td>
+                                        17.8 x 13.9 x 3.2 inches
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="info">Product Dimensions</td>
+                                    <td>
+                                        17.8 x 13.9 x 3.2 inches
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="info">Product Dimensions</td>
+                                    <td>
+                                        17.8 x 13.9 x 3.2 inches
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="info">Product Dimensions</td>
+                                    <td>
+                                        17.8 x 13.9 x 3.2 inches
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="info">Product Dimensions</td>
+                                    <td>
+                                        17.8 x 13.9 x 3.2 inches
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-            </div>
-            <!-- 客户评价 -->
-            <div class="user_comments" v-show="commentsShow">
-                <ul>
-                    <li v-for="(item,index) in userCommentsData" :key="index">
-                        <div class="username" style="margin-bottom:5px">
-                            <i class="iconfont icon-yonghu1"></i>
-                            <span>{{item.username}}</span>
-                        </div>
-                        <div class="stars" style="margin-bottom:5px">
-                            <div class="block">
-                                <el-rate v-model="starValue[index]" disabled></el-rate>
+                <!-- 客户评价 -->
+                <div class="user_comments" v-show="commentsShow">
+                    <ul>
+                        <li v-for="(item,index) in userCommentsData" :key="index">
+                            <div class="username" style="margin-bottom:5px">
+                                <i class="iconfont icon-yonghu1"></i>
+                                <span>{{item.username}}</span>
                             </div>
-                        </div>
-                        <div class="contents" style="margin-bottom:5px">
-                            <p style="font-weight:600;margin-bottom:10px">{{item.firstCom}}</p>
-                            <p>{{item.secondCom}}</p>
-                        </div>
-                        <div class="commentsTime">
-                            <p>{{item.comTime}}</p>
-                        </div>
-                    </li>
-                </ul>
+                            <div class="stars" style="margin-bottom:5px">
+                                <div class="block">
+                                    <el-rate v-model="starValue[index]" disabled></el-rate>
+                                </div>
+                            </div>
+                            <div class="contents" style="margin-bottom:5px">
+                                <p style="font-weight:600;margin-bottom:10px">{{item.firstCom}}</p>
+                                <p>{{item.secondCom}}</p>
+                            </div>
+                            <div class="commentsTime">
+                                <p>{{item.comTime}}</p>
+                            </div>
+                        </li>
+                    </ul>
 
-            </div>
-            <!-- 客户问题 -->
-            <div class="user_questions" v-show="questionsShow">
-                <ul>
-                    <li>
-                        <div>
-                            <span>问题：</span>
-                            <p>也许期待的不过是与世间为敌也许期待的不过是与世间为敌</p>
-                        </div>
-                        <div>
-                            <span>回答：</span>
-                            <p>也许期待的不过是与世间为敌</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <!-- 成本预估 -->
-            <div class="cost_estimate" v-show="estimateShow">
-                <form>
-                    <div>
-                        <label>请输入FOB(单位：USD$)</label>
-                        <input type="number" v-model="costEstimateData.fob">
-                    </div>
-                    <div>
-                        <label>请输入包装长(单位：inches)</label>
-                        <input type="number" v-model="costEstimateData.proLength">
-                    </div>
-                    <div>
-                        <label>请输入包装宽(单位：inches)</label>
-                        <input type="number" v-model="costEstimateData.proWidth">
-                    </div>
-                    <div>
-                        <label>请输入包装高(单位：inches)</label>
-                        <input type="number" v-model="costEstimateData.proHeight">
-                    </div>
-                    <div>
-                        <label>请输入产品毛重（单位：pounds)</label>
-                        <input type="number" v-model="costEstimateData.proWeight">
-                    </div>
-                </form>
-                <div class="cost_estimate_submit" @click="estimateSubmit()">
-                    <button>提 交</button>
                 </div>
-                <div class="cost_estimate_result">
-                    <input type="text" readonly :value="costEstimateData.result">
+                <!-- 客户问题 -->
+                <div class="user_questions" v-show="questionsShow">
+                    <ul>
+                        <li>
+                            <div>
+                                <span>问题：</span>
+                                <p>也许期待的不过是与世间为敌也许期待的不过是与世间为敌</p>
+                            </div>
+                            <div>
+                                <span>回答：</span>
+                                <p>也许期待的不过是与世间为敌</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 成本预估 -->
+                <div class="cost_estimate" v-show="estimateShow">
+                    <form>
+                        <div>
+                            <label>请输入FOB(单位：USD$)</label>
+                            <input type="number" v-model="costEstimateData.fob">
+                        </div>
+                        <div>
+                            <label>请输入包装长(单位：inches)</label>
+                            <input type="number" v-model="costEstimateData.proLength">
+                        </div>
+                        <div>
+                            <label>请输入包装宽(单位：inches)</label>
+                            <input type="number" v-model="costEstimateData.proWidth">
+                        </div>
+                        <div>
+                            <label>请输入包装高(单位：inches)</label>
+                            <input type="number" v-model="costEstimateData.proHeight">
+                        </div>
+                        <div>
+                            <label>请输入产品毛重（单位：pounds)</label>
+                            <input type="number" v-model="costEstimateData.proWeight">
+                        </div>
+                    </form>
+                    <div class="cost_estimate_submit" @click="estimateSubmit()">
+                        <button>提 交</button>
+                    </div>
+                    <div class="cost_estimate_result">
+                        <input type="text" readonly :value="costEstimateData.result">
+                    </div>
                 </div>
             </div>
         </div>
+
     </transition>
 </template>
 <style lang="less">
@@ -193,9 +196,9 @@ export default {
   methods: {
     //删除弹出框
     deleteBox() {
-      this.$emit('deletebox');
-      setTimeout(() => {  
-      this.$router.go(-1);
+      this.$emit("deletebox");
+       setTimeout(() => {
+        this.$router.go(-1);
       }, 300);
     },
     //切换商品详情，客户评论等
@@ -263,13 +266,12 @@ export default {
         (this.costEstimateData.proWidth - 0) +
         (this.costEstimateData.proHeight - 0) +
         (this.costEstimateData.proWeight - 0);
-    },
-
+    }
   },
-  props: ["isShow","proid"],
-  mounted(){
-      console.log('弹窗挂在完毕', this.proid);
-      //请求商品详情数据并渲染
+  props: ["isShow", "proid"],
+  mounted() {
+    console.log("弹窗挂在完毕", this.proid);
+    //请求商品详情数据并渲染
   }
 };
 </script>

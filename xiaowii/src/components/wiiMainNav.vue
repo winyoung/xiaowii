@@ -99,8 +99,7 @@ export default {
   z-index:999;
   width: 100%;
   height: 42px;
-    background: linear-gradient(#fff, #ddf1fc);
-//   background-color: #2041ba;
+  background: linear-gradient(#fff, #ddf1fc);
   position: fixed;
   top: 50px;
   .wii_nav_container {
@@ -116,9 +115,6 @@ export default {
         padding: 0 10px;
         position: relative;
         cursor: pointer;
-        // span {
-        //   color: white;
-        // }
         &:hover {
           border-radius: 5px;
           box-shadow: 0 0 15px -5px black;

@@ -1,16 +1,11 @@
 .main_view {
   width: 100%;
-  height: 100%;
-  background: #ddf1fc;
-  position: relative;
-}
-.main_view .container {
-  width: 1000px;
-  margin: 0 auto;
-  position: relative;
+  background: #fff;
 }
 .transitionBgbox {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(148, 132, 132, 0.1);

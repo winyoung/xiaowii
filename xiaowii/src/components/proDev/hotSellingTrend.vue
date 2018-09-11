@@ -7,15 +7,16 @@
       <span slot="title3">选择渠道：</span>
     </condition-search>
 
-    <!-- 图标展示 -->
+    <!-- 图形展示 -->
     <div class="hot_selling_trend_chart">
-
     </div>
+
     <!-- 热销榜 飙升榜 -->
     <div class="hot_ranking_list">
       <span class="hot_ranking_greatsale" @click="toggleRanking('销量',$event)">热销榜</span>
       <span class="hot_ranking_greatup" @click="toggleRanking('涨幅', $event)">飙升榜</span>
     </div>
+
     <!-- 图片遮罩层 -->
     <div class="hot_selling_trend_proImg">
       <ul class="clearfix">
@@ -24,8 +25,8 @@
         </li>
       </ul>
     </div>
+
     <!-- 弹出框 商品详情，客户评论等 -->
-    <!-- <show-pro-detail :proid="proId" :isShow="showProDeatilData" @deletebox="deleteBox"></show-pro-detail> -->
     <router-view :proid="proId" :isShow="showProDeatilData" @deletebox="deleteBox"></router-view>
   </div>
 </template>
@@ -121,6 +122,7 @@ export default {
     //传入子组件的弹窗触发
     deleteBox() {
       this.showProDeatilData = false;
+       
     }
   },
   mounted() {

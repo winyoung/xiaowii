@@ -28,7 +28,10 @@ export default new Router({
         },
         {
           path: 'burstingDig',
-          component: burstingDig
+          component: burstingDig,
+          children:[
+            {path:'showProDetail',component:showProDetail}
+          ]
         },
         {
           path: 'newProDev',
