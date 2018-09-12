@@ -1,6 +1,7 @@
 <template>
     <div>
         <div class="chengkai"></div>
+        <div class="title"><span style="font-size:20px;color:#8f8f8f;margin-left:20px">新品开发</span></div>
         <div class="new_pro_dev">
             <!-- 条件搜索 -->
             <div class="search">
@@ -112,7 +113,7 @@ export default {
           "https://www.easy-mock.com/mock/5b8cacaa5ae7a7318a66513b/example/newProList"
         )
         .then(res => {
-          console.log(res.data);
+        //   console.log(res.data);
           this.tableData = res.data.data;
         });
     }

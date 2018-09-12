@@ -7,9 +7,10 @@
       <wii-header></wii-header>
       <!-- 头部导航 -->
       <wii-main-nav></wii-main-nav>
-      <!-- 子组件 -->
+      <!-- 子组件：产品开发，客户管理等 -->
       <router-view></router-view>
     </div>
+    <!-- 请求数据时的过渡动画 -->
     <div class="transitionBgbox"><img src="../assets/5-121204193R0-50.gif" alt=""></div>
   </div>
 </template>
@@ -27,14 +28,6 @@ export default {
     };
   },
   mounted() {
-    // var bgBox = document.createElement("div");
-    // bgBox.style.position = "fixed";
-    // bgBox.style.height = "100%";
-    // bgBox.style.width = "100%";
-    // bgBox.style.backgroundColor = "rgba(0, 0, 0 ,.5)";
-    // bgBox.style.zIndex = "9999";
-    // console.log(bgBox);
-    // var bodyBox = document.querySelector("body");
     // 添加请求拦截器
     var bgBox = document.querySelector('.transitionBgbox');
     this.$axios.interceptors.request.use(function(config) {

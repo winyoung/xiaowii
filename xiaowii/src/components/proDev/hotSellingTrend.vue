@@ -1,4 +1,7 @@
 <template>
+<div>
+  <div class="chengkai"></div>
+  <div class="title"><span style="font-size:20px;color:#8f8f8f;margin-left:20px">热卖趋势</span></div>
   <div class="hot_selling_trend">
     <!-- 条件搜索 -->
     <condition-search>
@@ -29,6 +32,8 @@
     <!-- 弹出框 商品详情，客户评论等 -->
     <router-view :proid="proId" :isShow="showProDeatilData" @deletebox="deleteBox"></router-view>
   </div>
+</div>
+  
 </template>
 <style>
 @import url("../../assets/css/proDev/hotSellingTrend.css");

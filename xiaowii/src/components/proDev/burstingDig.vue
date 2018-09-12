@@ -1,6 +1,7 @@
 <template>
     <div>
         <div class="chengkai"></div>
+        <div class="title"><span style="font-size:20px;color:#8f8f8f;margin-left:20px">爆款挖掘</span></div>
         <div class="hot_sale">
             <!-- 条件搜索 -->
             <div class="search">

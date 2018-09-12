@@ -1,25 +1,23 @@
 <template>
-    <div class="online_pro">
-        这是线上产品页
+    <div>
+        <div class="chengkai"></div>
+        <div class="title">
+            <span style="font-size:20px;color:#8f8f8f;margin-left:20px">线上产品</span>
+        </div>
+        <div class="online_pro">
+
+        </div>
     </div>
 </template>
-<style lang="less">
-  .online_pro{
-      position: absolute;
-      top:100px;
-       z-index: -1;
-  }
+<style>
+@import url("../../assets/css/proDev/onlinePro.css");
 </style>
 <script>
 export default {
-    data(){
-        return{
-
-        }
-    },
-    mounted(){
-        // this.$store.commit('toggleShow', {isShow: false});
-        // console.log(this.$store.state.isShow, 'hotsell');
-    }
-}
+  data() {
+    return {};
+  },
+  mounted() {
+  }
+};
 </script>

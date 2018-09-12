@@ -1,6 +1,13 @@
+.chengkai {
+  height: 90px;
+  width: 100%;
+}
+.title {
+  width: 1000px;
+  margin: 10px auto;
+}
 .hot_selling_trend {
   position: relative;
-  top: 120px;
   width: 1000px;
   margin: 0 auto;
 }

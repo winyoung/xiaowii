@@ -1,6 +1,10 @@
 .chengkai {
-  height: 120px;
+  height: 90px;
   width: 100%;
+}
+.title {
+  width: 1000px;
+  margin: 10px auto;
 }
 .new_pro_dev {
   position: relative;
