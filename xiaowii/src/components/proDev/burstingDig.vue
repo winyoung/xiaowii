@@ -30,14 +30,14 @@
             <!-- 产品列表 -->
             <div class="proList">
                 <el-table :data="tableData" style="width: 100%" >
-                    <el-table-column align='center' width='50' label="序号" prop="id">
+                    <el-table-column align='center' width='40' label="序号" prop="id">
                     </el-table-column>
-                    <el-table-column align='center' label="图片">
+                    <el-table-column align='center' width="65" label="图片">
                         <template slot-scope="props">
                             <img style="width:50px" :src="props.row.img" alt="">
                         </template>
                     </el-table-column>
-                    <el-table-column align='center' width="300" label="描述" prop="desc">
+                    <el-table-column align='center' width="280" label="描述" prop="desc">
                     </el-table-column>
                     <el-table-column align='center' label="月销量" prop="monthSales">
                     </el-table-column>
@@ -45,14 +45,17 @@
                     </el-table-column>
                     <el-table-column align='center' label="售价" prop="price">
                     </el-table-column>
-                    <el-table-column align='center' width='150' label="月销售额" prop="totalPrice">
+                    <el-table-column align='center' width='120' label="月销售额" prop="totalPrice">
                     </el-table-column>
                     <el-table-column align='center' width='99' label="评分">
                         <template slot-scope="props">
                             <div class="block">
                                 <el-rate v-model="props.row.star" disabled></el-rate>
                             </div>
+                            <span style='font-size:14px;color:rgb(247, 186, 42);margin-left:5px;'>{{props.row.star}}</span>
                         </template>
+                    </el-table-column>
+                    <el-table-column align='center' width="95" label="起售时间" prop="saleTime">
                     </el-table-column>
                     <el-table-column align='center' width='50' label="更多">
                         <template slot-scope="props">

@@ -7,7 +7,6 @@
   top: 0;
   width: 1000px;
   margin: 0 auto;
-  margin: clac(0%);
 }
 .hot_sale .search {
   position: relative;
@@ -56,6 +55,12 @@
 }
 .hot_sale .proList .el-table .el-table__body-wrapper .cell {
   white-space: nowrap;
+  padding-left: 0;
+  padding-right: 0;
+}
+.hot_sale .proList .el-table .has-gutter .cell {
+  padding-left: 0;
+  padding-right: 0;
 }
 .hot_sale .proList .el-table .el-rate__icon {
   margin-right: 0;
