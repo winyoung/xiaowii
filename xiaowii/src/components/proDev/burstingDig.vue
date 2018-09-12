@@ -157,6 +157,15 @@ export default {
   },
   components: {
     showProDetail
-  }
+  },
+//   filters:{
+//       formatStar(val){
+//           val = val-0;//转为数字类型
+//           if(val>Math.floor(val)){
+//               val = Math.floor(val)+0.5
+//           }
+//           return val;
+//       }
+//   }
 };
 </script>
