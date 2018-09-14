@@ -1,5 +1,5 @@
 <template>
-    <div class="wii_header">
+    <div class="wii_header not-print">
         <div class="wii_header_container clearfix">
             <div class="company_logo fl">
                 <a href="javascript:;" @click="goToFirstPage()">

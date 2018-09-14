@@ -1,5 +1,5 @@
 <template>
-    <div class="wii_main_nav">
+    <div class="wii_main_nav not-print">
         <div class="wii_nav_container">
             <ul class="clearfix wii_main_subnav">
                 <li>

@@ -1,6 +1,6 @@
 <template>
     <!-- 条件搜索 -->
-    <div class="hot_selling_trend_search">
+    <div class="hot_selling_trend_search not-print">
         <div class='hot_search '>
             <!-- <span>选择品类：</span> -->
             <slot name="title1"></slot>
@@ -44,8 +44,9 @@
     width: 100%;
     height: 50px;
     border: 1px solid #d2d3d8;
+    border-radius: 5px;
     background-color: #f2fafe;
-    position: absolute;
+    position: relative;
     padding-left: 100px;
     .hot_search {
       width: 25%; // border: 1px solid red;
@@ -79,6 +80,7 @@
       }
       input {
         border: 1px solid #d2d3d8;
+        border-radius: 5px;
         width: 150px;
         height: 25px;
         padding-left: 10px;
@@ -97,6 +99,7 @@
       width: 90px;
       height: 25px;
       background-color: #c3ddec;
+        border-radius: 5px;
     }
   }
 

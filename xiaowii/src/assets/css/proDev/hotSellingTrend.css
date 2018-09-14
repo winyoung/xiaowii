@@ -11,45 +11,50 @@
   width: 1000px;
   margin: 0 auto;
 }
-.hot_selling_trend .hot_selling_trend_chart {
-  position: absolute;
-  top: 110px;
+.hot_selling_trend .cardBox {
+  border: 1px solid black;
+  margin-top: 30px;
+}
+.hot_selling_trend .cardBox .cardBox1 {
+  width: 400px;
+  height: 510px;
+  border: 1px solid red;
+}
+.hot_selling_trend .cardBox .cardBox1 .chart_box {
+  margin: 0 auto;
+  width: 95%;
+  height: 300px;
+}
+.hot_selling_trend .chart_box {
+  position: relative;
+  margin-top: 20px;
+}
+.hot_selling_trend .chart_box .el-breadcrumb {
+  height: 30px;
+}
+.hot_selling_trend .chart_box .hot_selling_trend_chart {
+  position: relative;
   width: 100%;
   height: 460px;
   border: 1px solid #d2d3d8;
+  border-radius: 5px;
 }
-.hot_selling_trend .hot_selling_trend_proImg {
+.hot_selling_trend .chart_box .hot_selling_trend_proImg {
   position: absolute;
   width: 100%;
   height: 60px;
-  top: 500px;
+  bottom: 10px;
 }
-.hot_selling_trend .hot_selling_trend_proImg ul {
+.hot_selling_trend .chart_box .hot_selling_trend_proImg ul {
   padding-left: 110px;
 }
-.hot_selling_trend .hot_selling_trend_proImg ul li {
+.hot_selling_trend .chart_box .hot_selling_trend_proImg ul li {
   width: 60px;
   height: 60px;
   float: left;
   margin-right: 20px;
 }
-.hot_selling_trend .hot_selling_trend_proImg ul li img {
+.hot_selling_trend .chart_box .hot_selling_trend_proImg ul li img {
   width: 60px;
   height: 60px;
-}
-.hot_selling_trend .hot_ranking_list {
-  position: absolute;
-  top: 84px;
-  left: 500px;
-  transform: translateX(-50%);
-  font-size: 16px;
-  font-weight: 600;
-}
-.hot_selling_trend .hot_ranking_list span {
-  padding: 5px;
-  cursor: pointer;
-}
-.hot_selling_trend .hot_ranking_list span:nth-child(1) {
-  border: 1px solid #d2d3d8;
-  border-bottom: 1px solid #fff;
 }

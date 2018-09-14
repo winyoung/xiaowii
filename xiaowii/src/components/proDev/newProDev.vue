@@ -7,10 +7,10 @@
             <div class="search">
                 <h3 style="margin-left:30px;margin-top:10px">请输入想开发产品信息:</h3>
                 <div class="search_dv">
-                    <span>产品尺寸（宽 x 深 x 高）：</span><input type="number" v-model="searchData.pro.x"> x <input type="number" v-model="searchData.pro.z"> x <input type="number" v-model="searchData.pro.y">
+                    <span>产品尺寸（宽 x 深 x 高）：</span><input type="number" v-model="searchData.pro.x" placeholder="lnches"> x <input type="number" v-model="searchData.pro.z" placeholder="lnches"> x <input type="number" v-model="searchData.pro.y" placeholder="lnches">
                 </div>
                 <div class="search_dv">
-                    <span>包装尺寸（宽 x 深 x 高）：</span><input type="number" v-model="searchData.pack.x"> x <input type="number" v-model="searchData.pack.z"> x <input type="number" v-model="searchData.pack.y">
+                    <span>包装尺寸（宽 x 深 x 高）：</span><input type="number" v-model="searchData.pack.x" placeholder="lnches"> x <input type="number" v-model="searchData.pack.z" placeholder="lnches"> x <input type="number" v-model="searchData.pack.y" placeholder="lnches">
                 </div>
                 <div class="search_dv">
                     <span style="margin-left:42px">产品成本（$USD）:</span>

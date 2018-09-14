@@ -10,7 +10,6 @@
   height: 100%;
   background-color: rgba(148, 132, 132, 0.1);
   z-index: 9999;
-  display: none;
 }
 .transitionBgbox img {
   width: 50px;

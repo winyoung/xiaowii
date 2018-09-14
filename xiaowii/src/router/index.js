@@ -8,7 +8,7 @@ import onlinePro from '../components/proDev/onlinePro.vue'
 import proManage from '../components/proDev/proManage.vue'
 import setting from '../components/proDev/setting.vue'
 import showProDetail from '../components/reusableCom/showProDetail.vue'
-
+import echartsBox from '../components/reusableCom/echartsBox.vue'
 
 Vue.use(Router)
 
@@ -18,19 +18,21 @@ export default new Router({
       path: '/',
       name: 'mainView',
       component: mainView,
-      children:[
+      children: [
         {
           path: 'hotSellingTrend',
           component: hotSellingTrend,
-          children:[
-            {path:'showProDetail',component:showProDetail}
+          children: [
+            { path: 'echartsBox', component: echartsBox ,children:[
+              {path: 'showProDetail', component:showProDetail}
+            ]}
           ]
         },
         {
           path: 'burstingDig',
           component: burstingDig,
-          children:[
-            {path:'showProDetail',component:showProDetail}
+          children: [
+            { path: 'showProDetail', component: showProDetail }
           ]
         },
         {

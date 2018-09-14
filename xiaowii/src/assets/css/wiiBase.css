@@ -160,3 +160,9 @@
    .fr{
        float: right;
    }
+   
+@media print {
+    .not-print {
+        opacity: 0
+    }
+}
