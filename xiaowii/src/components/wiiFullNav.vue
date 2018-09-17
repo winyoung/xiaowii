@@ -6,7 +6,7 @@
                     <img src="../assets/images/proDev.png" alt="产品开发">
                     <span>产品开发</span>
                 </li>
-                <li @click='setPath()'>
+                <li @click='setPath("客户开发")'>
                     <img src="../assets/images/cusDev.png" alt="客户开发">
                     <span>客户开发</span>
                 </li>
@@ -90,6 +90,8 @@ export default {
           var that = this;
           switch(info){
               case "产品开发" : that.$router.push("/hotSellingTrend")
+              break;
+              case "客户开发" : that.$router.push("/cusDig")
               break;
           }
       }

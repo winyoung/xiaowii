@@ -45,7 +45,7 @@
     height: 50px;
     border: 1px solid #d2d3d8;
     background-color: #f2fafe;
-    position: absolute;
+    position: relative;
     padding-left: 100px;
     .hot_search {
       width: 25%; // border: 1px solid red;

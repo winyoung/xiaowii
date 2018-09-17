@@ -81,6 +81,7 @@ export default {
           }
         ]
       });
+      myChart.off("click");
       myChart.on("click", function(param) {
         var name = param.name;
         //xdata传入时可以放当前点击的柱状图的id；
@@ -168,7 +169,12 @@ export default {
   components: {
     showProDetail,
     conditionSearch
-  }
+  },
+  // watch: {
+  //   $route(nV, oV) {
+  //     console.log(nV, oV);
+  //   }
+  // }
 };
 </script>
 

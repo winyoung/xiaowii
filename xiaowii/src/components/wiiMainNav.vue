@@ -10,7 +10,7 @@
                         <li @click='setPath("热卖趋势")'>热卖趋势</li>
                         <li @click='setPath("爆款挖掘")'>爆款挖掘</li>
                         <li @click='setPath("新品开发")'>新品开发</li>
-                        <li @click='setPath("线上产品")'>线上产品</li>
+                        <li @click='setPath("我的产品")'>我的产品</li>
                         <li @click='setPath("产品管理")'>产品管理</li>
                         <li @click='setPath("设置")'>设置</li>
                     </ul>
@@ -18,7 +18,7 @@
                 <li>
                     <span>客户开发</span>
                     <ul>
-                        <li>客户挖掘</li>
+                        <li @click='setPath("客户挖掘")'>客户挖掘</li>
                         <li>客户管理</li>
                     </ul>
                 </li>
@@ -82,13 +82,14 @@ export default {
               break;
               case '新品开发': that.$router.push('/newProDev') 
               break;
-              case '线上产品': that.$router.push('/onlinePro') 
+              case '我的产品': that.$router.push('/minePro') 
               break;
               case '产品管理': that.$router.push('/proManage') 
               break;
               case '设置': that.$router.push('/setting') 
               break;
-              
+              case '客户挖掘': that.$router.push('/cusDig') 
+              break;
           }
       }
   }
